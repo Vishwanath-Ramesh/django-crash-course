@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Django</title>
-  </head>
-  <body>
-    <ul>
-      {% for todo in todo_lists %}
-      <li>{{ todo.name }}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<ul>
+  {% for todo in todo_lists %}
+  <li><a href="/{{ todo.id }}">{{ todo.name }}</a></li>
+  {% endfor %}
+</ul>
+
+<p><a href="/create">Create Todo</a></p>
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+<p>Todo name is {{ todo.name }}</p>
+<p>Due date is {{ todo.due_date }}</p>
+
+<h3><a href="/update/{{ todo.id }}">Update Todo</a></h3>
+<h3><a href="/delete/{{ todo.id }}">Delete Todo</a></h3>
+{%endblock content%}
